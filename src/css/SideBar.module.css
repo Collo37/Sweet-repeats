@@ -1,0 +1,24 @@
+.SideBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60vw;
+  height: 100vh;
+  border-radius: 0 10px 10px 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  background-color: #c4c2c2;
+}
+
+.SideBar h2 {
+  margin: 1rem 0.5rem;
+  border-bottom: 2px solid transparent;
+}
+
+.SideBar:hover {
+  border-bottom: 2px solid #fb8500;
+}

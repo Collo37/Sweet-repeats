@@ -1,40 +1,50 @@
+import { useParams } from "react-router-dom";
 import { ShoppingBasketOutlined } from "@mui/icons-material";
 import classes from "../css/ProductItemPage.module.css";
 import { products } from "../data/products";
 import Navbar from "../components/Navbar";
 
 const ProductItemPage = () => {
-  const productDetails = products[0].items[1];
+  const item = useParams();
+  const itemName = item.productId;
+  const product = products.find((product) => {
+    return product.productTitle === itemName;
+  });
 
   const buttonClickedHandler = (event) => {
     const button = event.target;
     button.style.backgroundColor = "#fb8500";
   };
-  const sizeButtons = productDetails.sizes.map((size) => {
-    return (
-      <button key={size} onClick={(event) => buttonClickedHandler(event)}>
-        {size}
-      </button>
-    );
-  });
   return (
     <div className={classes.Container}>
       <Navbar />
       <div className={classes.productImageAndSizesContainer}>
-        <div className={classes.sizes}>{sizeButtons}</div>
+        <div className={classes.sizes}>
+          <button onClick={(event) => buttonClickedHandler(event)}>
+            {product.size}
+          </button>
+        </div>
         <div className={classes.imageContainer}>
-          <img src={productDetails.image} alt="denim jumpsuit" />
+          <img src={product.productImages[0]} alt={product.productTitle} />
         </div>
       </div>
       <div className={classes.productDetails}>
         <p>
+          <p
+            style={{
+              fontSize: "1.2rem",
+              color: "orange",
+            }}
+          >
+            {product.productTitle}
+          </p>
           <select>
             <option>Color</option>{" "}
-            {productDetails.colors.map((color) => {
+            {product.colors.map((color) => {
               return <option key={color}>{color}</option>;
             })}
           </select>
-          {productDetails.description}
+          {product.productDescription}
         </p>
         <div
           style={{
@@ -44,14 +54,14 @@ const ProductItemPage = () => {
             display: "flex",
             flexDirection: "column-reverse",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: "space-around",
           }}
         >
           <button className={classes.CartButton}>
             <ShoppingBasketOutlined />
             Add to cart
           </button>
-          <p className={classes.price}>{productDetails.price}</p>
+          <p className={classes.price}>{product.price}</p>
         </div>
       </div>
     </div>

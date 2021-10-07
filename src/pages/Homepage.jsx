@@ -1,4 +1,5 @@
 // import BottomBar from "../components/BottomBar";
+import CategoryMenu from "../components/CategoryMenu";
 import Navbar from "../components/Navbar";
 import ProductsContainer from "../components/ProductsContainer";
 import ProductSlider from "../components/ProductSlider";
@@ -10,6 +11,7 @@ const Homepage = () => {
       <Navbar />
       <div className={classes.ProcuctsContainer}>
         <ProductSlider />
+        <CategoryMenu />
         <ProductsContainer />
       </div>
     </div>

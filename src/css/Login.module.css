@@ -1,0 +1,64 @@
+.container {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.inputContainer {
+  width: 100%;
+  height: 50%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
+
+.inputContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 5%;
+  width: 30%;
+  height: 20%;
+  background-color: orange;
+  z-index: 10;
+  border-radius: 80% 50% 50% 60%;
+}
+
+.inputContainer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 30%;
+  height: 20%;
+  background-color: deeppink;
+  z-index: 10;
+  border-radius: 50% 80% 60% 50%;
+}
+
+.inputContainer input {
+  width: 80%;
+  height: 2.5rem;
+  padding: 0.2rem;
+  color: orange;
+  border: 1px solid black;
+  background-color: transparent;
+  margin: 1rem 0;
+  outline: none;
+}
+
+.container button {
+  background-color: orange;
+  color: black;
+  padding: 1rem;
+  border: none;
+  width: 40%;
+}

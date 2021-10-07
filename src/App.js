@@ -4,25 +4,33 @@ import Categories from "./pages/Categories";
 import Homepage from "./pages/Homepage";
 import ProductPage from "./pages/ProductPage";
 import ProductItemPage from "./pages/ProductItemPage";
-import Cart from "./pages/Cart";
+// import Cart from "./pages/Cart";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/categories">
+        <Route exact path="/categories">
           <Categories />
         </Route>
-        <Route exact path="/products">
+        <Route path="/categories/:category">
           <ProductPage />
         </Route>
-        <Route path="/products/productId">
+        <Route path="/product/:productId">
           <ProductItemPage />
         </Route>
-        <Route path="/cart">
+        {/* <Route path="/cart">
           <Cart />
+        </Route> */}
+        <Route path="/login">
+          <Login />
         </Route>
-        <Route path="/">
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route exact path="/">
           <Homepage />
         </Route>
       </Switch>

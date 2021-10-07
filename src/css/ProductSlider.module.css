@@ -23,10 +23,12 @@
 .ProductSliderImage {
   height: 100%;
   width: 100%;
-  background-image: url("https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+}
+
+.ProductSliderImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .ProductSliderDescription {

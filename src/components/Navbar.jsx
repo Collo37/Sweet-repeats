@@ -30,7 +30,10 @@ const Navbar = () => {
     <div className={classes.Navbar}>
       {showSideBar && <SideBar />}
       {showModal && <Modal clicked={modalClickedHandler} />}
-      <MenuIcon style={{ flex: "1" }} onClick={showSideBarHandler} />
+      <MenuIcon
+        style={{ flex: "1", cursor: "pointer" }}
+        onClick={showSideBarHandler}
+      />
       <div className={classes.Logo} onClick={logoClickedHandler}>
         Sweet Repeats
       </div>

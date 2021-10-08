@@ -11,14 +11,42 @@
   justify-content: center;
   align-items: center;
   z-index: 20;
-  background-color: #c4c2c2;
+  background-color: #ffa600d9;
+  animation: float-in 0.5s ease;
 }
 
 .SideBar h2 {
   margin: 1rem 0.5rem;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 
-.SideBar:hover {
-  border-bottom: 2px solid #fb8500;
+.SideBar h2:hover {
+  border-bottom: 3px solid deeppink;
+}
+
+.SideBar Link:hover {
+  color: white;
+}
+
+@media (min-width: 500px) {
+  .SideBar h2 {
+    filter: blur(1px);
+  }
+  .SideBar h2:hover {
+    filter: blur(0);
+  }
+}
+
+@keyframes float-in {
+  0% {
+    transform: translateX(-100%);
+    transform: rotateY(90deg);
+  }
+  95% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0);
+    transform: rotateY(0deg);
+  }
 }

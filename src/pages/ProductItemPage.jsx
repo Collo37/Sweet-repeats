@@ -30,14 +30,14 @@ const ProductItemPage = () => {
       </div>
       <div className={classes.productDetails}>
         <p>
-          <p
+          <span
             style={{
               fontSize: "1.2rem",
               color: "orange",
             }}
           >
             {product.productTitle}
-          </p>
+          </span>
           <select>
             <option>Color</option>{" "}
             {product.colors.map((color) => {

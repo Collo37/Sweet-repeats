@@ -17,6 +17,7 @@
   border-radius: 50%;
   transform: skewX(-30deg);
   font-family: "Ephesis", cursive;
+  cursor: pointer;
   font-size: 2rem;
   color: #000;
   text-shadow: 0 0 7px deeppink, 0 0 10px pink, 0 0 21px deeppink;

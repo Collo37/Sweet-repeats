@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Categories from "./pages/Categories";
 import Homepage from "./pages/Homepage";
 import ProductPage from "./pages/ProductPage";
@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 
 function App() {
+  const user = true;
   return (
     <div className="App">
       <Switch>
@@ -24,12 +25,8 @@ function App() {
         {/* <Route path="/cart">
           <Cart />
         </Route> */}
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/signup">
-          <SignUp />
-        </Route>
+        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
+        <Route path="/signup">{user ? <Redirect to="/" /> : <SignUp />}</Route>
         <Route exact path="/">
           <Homepage />
         </Route>

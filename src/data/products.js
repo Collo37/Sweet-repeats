@@ -29,8 +29,7 @@ export const products = [
     productTitle: "Skirt",
     price: 300,
     colors: ["Green", "black"],
-    productDescription:
-      "Woven skirt for the casual night out.",
+    productDescription: "Woven skirt for the casual night out.",
     size: "L",
     productImages: [
       "https://images.pexels.com/photos/9769870/pexels-photo-9769870.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -130,7 +129,3 @@ export const products = [
     inStock: true,
   },
 ];
-
-// export const cart = {
-
-// }

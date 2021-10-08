@@ -45,6 +45,7 @@
   height: 25rem;
   overflow: hidden;
   border-radius: 5px;
+  height: 80%;
 }
 
 .imageContainer img {
@@ -99,4 +100,15 @@
 .price {
   color: #fb8500;
   font-size: 1.5rem !important;
+}
+
+@media (min-width: 500px) {
+  .imageContainer {
+    max-width: 500px;
+  }
+
+  .imageContainer img {
+    width: 100%;
+    object-fit: cover;
+  }
 }

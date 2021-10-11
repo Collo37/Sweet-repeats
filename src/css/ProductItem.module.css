@@ -39,3 +39,9 @@
     padding: 1rem;
   }
 }
+
+@media (max-width: 300px) {
+  .ProductItem {
+    width: 100%;
+  }
+}

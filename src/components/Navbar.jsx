@@ -1,4 +1,5 @@
 import classes from "../css/Navbar.module.css";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
@@ -7,10 +8,11 @@ import Modal from "./Modal";
 import SideBar from "./SideBar";
 import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [showSideBar, setShowSideBar] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const history = useHistory();
+  const count = useSelector((state) => state.cart.quantity);
   const logoClickedHandler = () => {
     history.push("/");
   };
@@ -46,7 +48,7 @@ const Navbar = () => {
         }}
       >
         <Badge
-          badgeContent={1}
+          badgeContent={count}
           color="secondary"
           onClick={showCartHandler}
           style={{ marginRight: "0.8rem", color: "#fb8500" }}

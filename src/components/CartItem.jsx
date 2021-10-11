@@ -1,20 +1,46 @@
 import { useState } from "react";
 import classes from "../css/CartItem.module.css";
+import { useDispatch } from "react-redux";
+import {
+  reduceProduct,
+  removeProduct,
+  updateProduct,
+} from "../state/cartSlice";
+import { Delete } from "@mui/icons-material";
+import { useHistory } from "react-router";
 
 const CartItem = ({ itemDetails }) => {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(itemDetails.orders);
+  const dispatch = useDispatch();
+  const history = useHistory();
   const reduceCountHandler = () => {
-    count !== 0
-      ? setCount(count - 1)
-      : alert("This item is no longer in the cart!");
+    count !== 0 ? setCount(itemDetails.orders) : setCount(0);
+    dispatch(reduceProduct({ productId: itemDetails._id }));
   };
+
   const increaseCountHandler = () => {
-    setCount(count + 1);
+    setCount(itemDetails.orders);
+    dispatch(updateProduct({ productId: itemDetails._id }));
+  };
+
+  const removeClickedHandler = (id) => {
+    dispatch(removeProduct({ productId: id }));
+    setCount(itemDetails.orders);
   };
   return (
     <div className={classes.Container}>
       <div className={classes.CartItemImage}>
-        <img src={itemDetails.image} alt={itemDetails.name} />
+        <img
+          src={itemDetails.productImages[0]}
+          alt={itemDetails.productTitle}
+          onClick={() => history.push(`/product/${itemDetails._id}`)}
+        />
+        <div
+          className={classes.delete}
+          onClick={() => removeClickedHandler(itemDetails._id)}
+        >
+          <Delete color="warning" />
+        </div>
       </div>
       <div
         style={{
@@ -27,21 +53,20 @@ const CartItem = ({ itemDetails }) => {
         }}
       >
         <div className={classes.counter}>
-          <button onClick={reduceCountHandler}>-</button>
-          {count}
+          <button onClick={() => reduceCountHandler()}>-</button>
+          {itemDetails.orders}
           <button onClick={increaseCountHandler}>+</button>
         </div>
         <div className={classes.productDetails}>
           <p>
-            Product: <span>{itemDetails.name}</span>
+            <span>{itemDetails.productTitle}</span>
           </p>
           <p>
-            Price: <span>{itemDetails.price}</span>
+            <span>{itemDetails.price}</span>
           </p>
         </div>
       </div>
     </div>
   );
 };
-
 export default CartItem;

@@ -10,9 +10,9 @@ const Homepage = () => {
     <div className={classes.Homepage}>
       <Navbar />
       <div className={classes.ProcuctsContainer}>
-        <ProductSlider />
+        <ProductSlider category="New Arrivals" />
         <CategoryMenu />
-        <ProductsContainer />
+        <ProductsContainer newArrivals="New Arrivals" tops="Tops" />
       </div>
     </div>
   );

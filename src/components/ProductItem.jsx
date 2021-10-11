@@ -10,7 +10,7 @@ const ProductItem = ({ item }) => {
   return (
     <div
       className={classes.ProductItem}
-      onClick={() => productClickedHandler(item.productTitle)}
+      onClick={() => productClickedHandler(item._id)}
     >
       <img
         className={classes.ProductImage}

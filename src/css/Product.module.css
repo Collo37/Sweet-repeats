@@ -9,6 +9,7 @@
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.07);
+  background-color: #fb8500;
   cursor: pointer;
 }
 

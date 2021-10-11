@@ -21,18 +21,27 @@ const CategoryMenu = () => {
     filteredCategories.push(category);
   }
   const categoryClickedHandler = (id) => {
-    history.push(`/categories/${id}`)
-  }
+    history.push(`/categories/${id}`);
+  };
   return (
     <div className={classes.Container}>
       {filteredCategories.map((category) => {
         return (
-          <div className={classes.category} key={category} onClick={() => categoryClickedHandler(category)}>
+          <div
+            className={classes.category}
+            key={category}
+            onClick={() => categoryClickedHandler(category)}
+          >
             {category}
           </div>
         );
       })}
-      <div className={classes.category}>See All</div>
+      <div
+        className={classes.category}
+        onClick={() => categoryClickedHandler("")}
+      >
+        See All
+      </div>
     </div>
   );
 };

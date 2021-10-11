@@ -1,6 +1,6 @@
 .Container {
-  width: 100%;
-  height: 50%;
+  max-width: 300px;
+  height: 15rem;
   margin: 1rem auto;
   overflow: hidden;
   display: flex;
@@ -14,12 +14,28 @@
   height: 60%;
   width: 100%;
   border-radius: 5px;
+  position: relative;
 }
 
 .CartItemImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.delete {
+  position: absolute;
+  background-color: #f2cda29d;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .counter {
@@ -37,8 +53,13 @@
   border: 2px #fb8500 solid;
   outline: none;
   border-radius: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   height: 2rem;
   width: 2rem;
+  border-radius: 50%;
   background-color: transparent;
   color: gray;
   font-size: 1rem;
@@ -46,12 +67,18 @@
 
 .productDetails {
   display: flex;
+  flex-wrap: wrap;
   height: 100%;
-  flex-direction: column;
   width: 90%;
-  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
-
+.productDetails p {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .productDetails span {
   color: #fb8500;
   font-weight: 700;

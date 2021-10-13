@@ -1,6 +1,10 @@
+import { useDispatch } from "react-redux";
+import { addToFavorites } from "../state/favoritesSlice";
 import classes from "../css/Product.module.css";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 const Product = ({ details, clicked }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className={classes.Product} onClick={clicked}>
       <div
@@ -8,6 +12,7 @@ const Product = ({ details, clicked }) => {
         style={{ backgroundImage: `url(${details.productImages[0]})` }}
       >
         <FavoriteBorderIcon
+          onClick={() => dispatch(addToFavorites({ itemId: details._id }))}
           style={{
             position: "absolute",
             bottom: "10px",

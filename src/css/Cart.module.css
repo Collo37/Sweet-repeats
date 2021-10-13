@@ -7,7 +7,6 @@
   margin: 5rem 0;
   position: relative;
   padding-top: 5rem;
-  overflow-x: hidden;
 }
 
 .title {
@@ -46,7 +45,6 @@
   flex-wrap: wrap;
   align-items: center;
   height: 70%;
-  overflow-y: scroll;
 }
 
 .orderSummary {

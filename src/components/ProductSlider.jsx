@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import classes from "../css/ProductSlider.module.css";
 import { publicRequest } from "./axios";
+import Spinner from "./Spinner";
 
 const ProductSlider = (props) => {
   const [newArrivals, setNewArrivals] = useState([]);
@@ -85,7 +86,7 @@ const ProductSlider = (props) => {
       })}
     </div>
   ) : (
-    <div>Loading....Please wait</div>
+    <Spinner />
   );
   return <div className={classes.container}>{productSlider}</div>;
 };

@@ -6,6 +6,7 @@ import { ShoppingBasketOutlined } from "@mui/icons-material";
 import classes from "../css/ProductItemPage.module.css";
 import Navbar from "../components/Navbar";
 import { addProduct } from "../state/cartSlice";
+import Spinner from "../components/Spinner";
 
 const ProductItemPage = () => {
   const item = useParams();
@@ -92,7 +93,7 @@ const ProductItemPage = () => {
       </div>
     </>
   ) : (
-    <div>Loading ....</div>
+    <Spinner />
   );
   return (
     <div className={classes.Container}>

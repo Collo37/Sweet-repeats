@@ -1,6 +1,6 @@
 .Product {
-  height: 95%;
-  min-width: 9rem;
+  height: 90%;
+  min-width: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,7 +9,6 @@
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.07);
-  background-color: #fb8500;
   cursor: pointer;
 }
 

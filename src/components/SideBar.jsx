@@ -22,7 +22,10 @@ const SideBar = () => {
         </Link>
       </h2>
       <h2>
-        <Link style={{ textDecoration: "none", color: "white" }} to="/">
+        <Link
+          style={{ textDecoration: "none", color: "white" }}
+          to="/favorites"
+        >
           Favorites
         </Link>
       </h2>

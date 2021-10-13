@@ -4,6 +4,7 @@ import classes from "../css/ProductsContainer.module.css";
 import Product from "../components/Product";
 import { useState, useEffect } from "react";
 import { publicRequest } from "./axios";
+import Spinner from "./Spinner";
 
 const ProductsContainer = (props) => {
   const [newArrivals, setNewArrivals] = useState([]);
@@ -58,7 +59,7 @@ const ProductsContainer = (props) => {
       </div>
     </div>
   ) : (
-    <div>Loading... PleaseWait </div>
+    <Spinner />
   );
 
   topsItems = !loading ? (
@@ -85,7 +86,7 @@ const ProductsContainer = (props) => {
       </div>
     </div>
   ) : (
-    <div>Loading...Please wait..</div>
+    <Spinner />
   );
 
   return (

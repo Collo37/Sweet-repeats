@@ -33,6 +33,7 @@ const ProductsContainer = (props) => {
   const productItemClickedHandler = (id) => {
     history.push(`/product/${id}`);
   };
+
   let newItems;
   let topsItems;
   newItems = !loading ? (

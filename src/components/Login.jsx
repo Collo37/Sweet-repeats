@@ -9,12 +9,16 @@ const Login = () => {
   const history = useHistory();
 
   const loginClickedHandler = async () => {
-    const res = await publicRequest.post(`/users/login`, {
-      email: email.current.value,
-      password: password.current.value,
-    });
-    localStorage.setItem("Token", res.data.userdata.accessToken);
-    history.push("/");
+    try {
+      const res = await publicRequest.post(`/users/login`, {
+        email: email.current.value,
+        password: password.current.value,
+      });
+      localStorage.setItem("Token", res.data.userdata.accessToken);
+      history.push("/");
+    } catch (err) {
+      alert("Incorrect credentials. Try again");
+    }
   };
   return (
     <div className={classes.container}>

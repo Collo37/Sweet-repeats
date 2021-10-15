@@ -25,13 +25,13 @@ const ProductPage = () => {
     getProducts();
   }, [category]);
   const categoryName = category.category;
-  const favoritesClickedHandler = (id) => {
+  const favoritesClickedHandler = (itemName, id) => {
     if (localStorage.getItem("Token")) {
       dispatch(addToFavorites({ itemId: id }));
+      alert(`${itemName} has been added to favorites`);
     } else {
       setPrompt(true);
     }
-    console.log("Item has been added to favorites");
   };
   const dispatch = useDispatch();
   const [prompt, setPrompt] = useState(false);
@@ -51,7 +51,9 @@ const ProductPage = () => {
               <ProductItem
                 key={`product_${product.productTitle}`}
                 item={product}
-                clicked={() => favoritesClickedHandler(product._id)}
+                clicked={() =>
+                  favoritesClickedHandler(product.productTitle, product._id)
+                }
               />
             );
           })}

@@ -9,6 +9,7 @@
   border-radius: 5px;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
   position: relative;
+  cursor: pointer;
 }
 
 .ProductImage {

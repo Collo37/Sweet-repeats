@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://sweet-repeats.herokuapp.com/";
+const BASE_URL = "https://sweet-repeats.herokuapp.com/api/";
 
 const BEARER_TOKEN = localStorage.getItem("Token");
 export const publicRequest = axios.create({
